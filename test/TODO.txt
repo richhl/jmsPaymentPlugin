@@ -1,0 +1,10 @@
+/paymentDemo/actions/actions.class.php
+
+receiveDepositInfoFrom4b
+
+-wget http://machine.domain/hostappname/paymentDemo/receiveDepositInfoFrom4b //From an IP not being sfConfig::get('app_jmsPaymentPlugin__4b_simulation_ip) or sfConfig::get('app_jmsPaymentPlugin__4b_production_ip) has to throw sfSecurityException and log the incident.
+-wget http://machine.domain/hostappname/paymentDemo/receiveDepositInfoFrom4b?pszPurchorderNum=-1 //Non existent order has to log and throw LogicException.
+-Call with a pszPurchorderNum corresponding to a payment without an opened deposit transaction has to log and throw LogicException.
+-wget http://machine.domain/hostappname/paymentDemo/receiveDepositInfoFrom4b?pszPurchorderNum=1&store=pi11000168&result=0&tipotrans=SSL&pszTxnDate=01%2f02%2f2011&pszApprovalCode=&pszTxnID=3255&coderror=67&deserror=Comercio_desactivado has to store this info in payment_data table (use mysql -u user -p -e "select * from payment_data" database to test) and a PaymentException has to be launched and logged. The transaction state has to change to failed with response code 67 and Reason code : Comercio_desactivado
+-wget http://machine.domain/hostappname/paymentDemo/receiveDepositInfoFrom4b?pszPurchorderNum=1&store=pi11000168&result=1&tipotrans=SSL&pszTxnDate=01%2f02%2f2011&pszApprovalCode=32&pszTxnID=3255&coderror=&deserror= has to store this info in payment_data table.  (use mysql -u user -p -e "select * from payment_data" database to test) and a PaymentException has to be launched and logged. The transaction state has to change to success with response code 3255 and Reason code: Approval with 4b approval code: 32. The payment state has to change to completed.
+

@@ -1,0 +1,56 @@
+options:
+  type:         InnoDB
+  charset:      utf8
+  collate:      utf8_unicode_ci
+
+#Resultado de la transacción : result
+# 0->Transacción autorizada
+# 2->Transacción fallida
+#Referencia de la compra : pszPurchorderNum
+#Fecha de la transacción : pszTxnDate - dd/mm/aa
+#Tipo de transacción : tipotrans - SSL/CES 4
+#Nombre abreviado tienda : store (clave, dato aportado por 4B)
+#Si la operación se efectúa correctamente:
+#Código de autorización : pszApprovalCode
+#Id. de transacción : pszTxnID
+#Si la operación resulta fallida:
+#Código de error : coderror
+#Descripción de error : deserror
+
+_4bPaymentData:
+  inheritance:
+    extends: PaymentData
+    type: column_aggregation
+    keyField: method_class_name
+    keyValue: jms4bPaymentMethod
+  columns:
+    store:
+      type: string(10)
+      notnull: true
+    order_ref:
+      type: string(255)
+      notnull: true
+    transaction_result: 
+      type: boolean
+      notnull: false
+    transaction_date: 
+      type: string(10)
+      notnull: false
+    transaction_type: 
+      type: string(3)
+      notnull: false
+    transaction_approval_code:
+      type: string(255)
+      notnull: false
+    transaction_id:
+      type: string(255)
+      notnull: false
+    transaction_error_code: 
+      type: string(255)
+      notnull: false
+    transaction_error_description:
+      type: string(255)
+      notnull: false
+    transaction_from_ip:
+      type: string(15)
+      notnull: true

@@ -30,7 +30,7 @@ all:
     _4b:
       #store key provided for 4b system.
       store: ~
-      production_url: "tpv.4b.es/tpvv/teargral.exe"
+      production_url: "https://tpv.4b.es/tpvv/teargral.exe"
       production_ip: 194.224.159.47
       simulation_url: "https://tpv2.4b.es/simulador/teargral.exe"
       simulation_ip: 194.224.159.57

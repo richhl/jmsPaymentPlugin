@@ -68,9 +68,9 @@ abstract class BasepaymentDemoActions extends sfActions
         if ($myData instanceof _4bPaymentData)
         {
 
-	    $order = $myData->getInternalReferenceNumber();
+	    $order = $payment->getId();
 	    $store = $myData->getStore();
-	    $this->dataContainer = array('order' => $order, 'store' => $store);
+	    $this->dataContainer = array('order' => $order, 'store' => $store, 'language' => 'es');
 	    //Want to pass to the redirect page data related
 	    //with the payment method and no more than this data.
 	    //This is to allow the form on that page to build itself

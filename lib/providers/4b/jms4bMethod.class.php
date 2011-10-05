@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2010 Johannes M. Schmitt
+ * Copyright 2011 Richard C. Hidalgo Lorite
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@
  * 
  * @package jmsPaymentPlugin
  * @subpackage providers
- * @author Richard C. Hidalgo <rich@argonauta.org>
+ * @author Richard C. Hidalgo <rich at argonauta.org>
  */
 /* Reference information visiting https://tpv.4b.es/tpvv/consultas/
  * /doc/Documentos%20Errores/GU%C3%8DA%20R%C3%81PIDA%20DE%20CONSULTA%20PASAT%20INTERNET.htm

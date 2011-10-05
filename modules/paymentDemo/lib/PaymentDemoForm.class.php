@@ -21,6 +21,7 @@ class PaymentDemoForm extends BaseForm
   private static $paymentMethods = array(
     'MicropaymentDebit' => 'Micropayment Debit',
     'Paypal' => 'PayPal',
+    '_4b' => '4b',
   );
   
   public function configure()
